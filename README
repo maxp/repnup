@@ -1,0 +1,8 @@
+
+# test exercise
+
+notes:
+- no error handling in db routines
+- html output limited to 1000 records
+  (mongodb driver does not support real streaming)
+- csv import tested with one million records

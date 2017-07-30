@@ -1,19 +1,18 @@
 //
-//
-//
 
+'use strict';
 
 // config params:
 const
-  MDB_URL = 'mongodb://mdb:27017/repnup';
+  MDB_URL = 'mongodb://mdb:27017/repnup',
   PORT    = 3000;
 //
 
 
 const
   http = require('http'),
-  csv = require('csv-parse')
-  transform = require('stream-transform')
+  csv = require('csv-parse'),
+  transform = require('stream-transform'),
   Busboy = require('busboy'),
   mdb = require('./mdb')
   ;
@@ -21,7 +20,7 @@ const
 function html_data(req, res) {
   mdb.fetch(
     {},
-    (data) => {
+    (err, data) => {
       // NOTE: no html escape!
       res.write("<table>")
       for(const d of data) {

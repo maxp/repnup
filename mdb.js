@@ -2,6 +2,8 @@
 //  mongodb methods
 //
 
+'use strict';
+
 const
       COLL = "csv_data",
       {MongoClient} = require('mongodb')
@@ -25,8 +27,9 @@ x.fetch = (q, cb) => {
   db.collection(COLL).find(q).limit(1000).toArray( (err, data) => {
     if(err) {
       console.warn("find:", err);
+      cb(err);
     };
-    cb(data);
+    cb(null, data);
   });
 }
 
@@ -34,6 +37,7 @@ x.insert = (row, cb) => {
   db.collection(COLL).insertOne(row, (err, res) => {
     if(err) {
       console.warn("insert:", err);
+      cb(err);
     };
     cb();
   });
@@ -43,6 +47,7 @@ x.remove = (q, cb) => {
   db.collection(COLL).deleteMany(q, (err, res) => {
     if(err) {
       console.warn("remove:", err);
+      cb(err);
     };
     cb();
   });
