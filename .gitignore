@@ -1,0 +1,26 @@
+#
+#	generic .gitignore
+#
+
+/node_modules/
+/var/
+
+/tmp/
+
+.*
+
+*~
+*.class
+*.ser
+*.bak
+*.old
+*.pyc
+*.pyo
+*.log
+*.tmp
+*.swp
+*.log
+
+!.gitignore
+
+#.

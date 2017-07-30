@@ -1,0 +1,23 @@
+{
+  "name": "repnup",
+  "description": "test exercise",
+  "author": "Maxim Penzin",
+  "email": "m@penzin.ru",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maxp/repnup.git"
+  },
+  "dependencies": {
+    "mongodb": "2.2.30",
+    "busboy": "0.2.14",
+    "csv-parse": "1.2.1",
+    "stream-transform": "0.1.2"
+  },
+  "scripts": {
+    "start": "nodejs index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "data1": "curl -X POST -F 'csv=@var/data1.csv' http://localhost:3000/upload",
+    "data1000": "curl -X POST -F 'csv=@var/d1000.csv' http://localhost:3000/upload"
+  }
+}
